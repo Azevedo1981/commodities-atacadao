@@ -1,0 +1,267 @@
+{
+  "_instrucao": "Adicione uma nova entrada em 'historico' toda semana. O dashboard usa as últimas 4 entradas para gerar o gráfico de tendência e o comparativo semanal.",
+  "historico": [
+    {
+      "data": "14/02/2025",
+      "commodities": [
+        {
+          "id": "soja",
+          "valor_num": 112.8
+        },
+        {
+          "id": "milho",
+          "valor_num": 64.1
+        },
+        {
+          "id": "boi",
+          "valor_num": 308.2
+        },
+        {
+          "id": "cafe",
+          "valor_num": 2198.0
+        },
+        {
+          "id": "acucar",
+          "valor_num": 148.5
+        },
+        {
+          "id": "frango",
+          "valor_num": 6.55
+        },
+        {
+          "id": "suino",
+          "valor_num": 7.98
+        },
+        {
+          "id": "trigo",
+          "valor_num": 81.2
+        },
+        {
+          "id": "arroz",
+          "valor_num": 44.6
+        },
+        {
+          "id": "feijao",
+          "valor_num": 188.3
+        },
+        {
+          "id": "leite",
+          "valor_num": 2.18
+        }
+      ]
+    },
+    {
+      "data": "21/02/2025",
+      "commodities": [
+        {
+          "id": "soja",
+          "valor_num": 113.9
+        },
+        {
+          "id": "milho",
+          "valor_num": 63.4
+        },
+        {
+          "id": "boi",
+          "valor_num": 311.8
+        },
+        {
+          "id": "cafe",
+          "valor_num": 2256.0
+        },
+        {
+          "id": "acucar",
+          "valor_num": 146.8
+        },
+        {
+          "id": "frango",
+          "valor_num": 6.48
+        },
+        {
+          "id": "suino",
+          "valor_num": 8.05
+        },
+        {
+          "id": "trigo",
+          "valor_num": 80.3
+        },
+        {
+          "id": "arroz",
+          "valor_num": 43.85
+        },
+        {
+          "id": "feijao",
+          "valor_num": 192.1
+        },
+        {
+          "id": "leite",
+          "valor_num": 2.21
+        }
+      ]
+    },
+    {
+      "data": "28/02/2025",
+      "commodities": [
+        {
+          "id": "soja",
+          "valor_num": 115.4
+        },
+        {
+          "id": "milho",
+          "valor_num": 62.66
+        },
+        {
+          "id": "boi",
+          "valor_num": 314.6
+        },
+        {
+          "id": "cafe",
+          "valor_num": 2324.0
+        },
+        {
+          "id": "acucar",
+          "valor_num": 144.2
+        },
+        {
+          "id": "frango",
+          "valor_num": 6.42
+        },
+        {
+          "id": "suino",
+          "valor_num": 8.12
+        },
+        {
+          "id": "trigo",
+          "valor_num": 79.4
+        },
+        {
+          "id": "arroz",
+          "valor_num": 43.02
+        },
+        {
+          "id": "feijao",
+          "valor_num": 196.65
+        },
+        {
+          "id": "leite",
+          "valor_num": 2.19
+        }
+      ]
+    },
+    {
+      "data": "07/03/2025",
+      "commodities": [
+        {
+          "id": "soja",
+          "icon": "🫘",
+          "nome": "Soja",
+          "valor_num": 116.3,
+          "preco": "R$ 116,30",
+          "unidade": "saca 60kg · PR",
+          "cor": "#16a34a",
+          "cepea": "https://cepea.org.br/br/indicador/soja.aspx"
+        },
+        {
+          "id": "milho",
+          "icon": "🌽",
+          "nome": "Milho",
+          "valor_num": 62.45,
+          "preco": "R$ 62,45",
+          "unidade": "saca 60kg · SP",
+          "cor": "#ca8a04",
+          "cepea": "https://cepea.org.br/br/indicador/milho.aspx"
+        },
+        {
+          "id": "boi",
+          "icon": "🐄",
+          "nome": "Boi Gordo",
+          "valor_num": 318.5,
+          "preco": "R$ 318,50",
+          "unidade": "arroba · SP",
+          "cor": "#dc2626",
+          "cepea": "https://cepea.org.br/br/indicador/boi-gordo.aspx"
+        },
+        {
+          "id": "cafe",
+          "icon": "☕",
+          "nome": "Café Arábica",
+          "valor_num": 2380.0,
+          "preco": "R$2.380,00",
+          "unidade": "saca 60kg · SP",
+          "cor": "#92400e",
+          "cepea": "https://cepea.org.br/br/indicador/cafe.aspx"
+        },
+        {
+          "id": "acucar",
+          "icon": "🍬",
+          "nome": "Açúcar Cristal",
+          "valor_num": 144.2,
+          "preco": "R$ 144,20",
+          "unidade": "saca 50kg · SP",
+          "cor": "#7c3aed",
+          "cepea": "https://cepea.org.br/br/indicador/acucar.aspx"
+        },
+        {
+          "id": "frango",
+          "icon": "🐔",
+          "nome": "Frango Vivo",
+          "valor_num": 6.38,
+          "preco": "R$ 6,38",
+          "unidade": "kg · SP",
+          "cor": "#f97316",
+          "cepea": "https://cepea.org.br/br/indicador/frango.aspx"
+        },
+        {
+          "id": "suino",
+          "icon": "🐷",
+          "nome": "Suíno Vivo",
+          "valor_num": 8.15,
+          "preco": "R$ 8,15",
+          "unidade": "kg · SP",
+          "cor": "#ec4899",
+          "cepea": "https://cepea.org.br/br/indicador/suino.aspx"
+        },
+        {
+          "id": "trigo",
+          "icon": "🌾",
+          "nome": "Trigo",
+          "valor_num": 78.5,
+          "preco": "R$ 78,50",
+          "unidade": "saca 60kg · PR",
+          "cor": "#d97706",
+          "cepea": "https://cepea.org.br/br/indicador/trigo.aspx"
+        },
+        {
+          "id": "arroz",
+          "icon": "🍚",
+          "nome": "Arroz em Casca",
+          "valor_num": 42.8,
+          "preco": "R$ 42,80",
+          "unidade": "saca 50kg · RS",
+          "cor": "#0891b2",
+          "cepea": "https://cepea.org.br/br/indicador/arroz.aspx"
+        },
+        {
+          "id": "feijao",
+          "icon": "🫘",
+          "nome": "Feijão Carioca",
+          "valor_num": 198.4,
+          "preco": "R$ 198,40",
+          "unidade": "saca 60kg · PR",
+          "cor": "#854d0e",
+          "cepea": "https://cepea.org.br/br/indicador/feijao.aspx"
+        },
+        {
+          "id": "leite",
+          "valor_num": 2.23,
+          "icon": "🥛",
+          "nome": "Leite",
+          "preco": "R$ 2,23",
+          "unidade": "por litro · SP",
+          "cor": "#0284c7",
+          "cepea": "https://cepea.org.br/br/indicador/leite.aspx"
+        }
+      ]
+    }
+  ]
+}
