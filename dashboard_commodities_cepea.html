@@ -2,584 +2,619 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#1a4d2e">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Commodities">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Commodities Monitor · Atacadão</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <style>
-:root{--verde:#1a4d2e;--verde2:#2d7a4f;--menta:#4caf7d;--ouro:#c8960c;
-      --creme:#fdf6e9;--creme2:#f0e6cc;--cinza:#6b7280;--escuro:#0f1f0f;
-      --alta:#16a34a;--baixa:#dc2626;--neutro:#64748b;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'DM Sans',sans-serif;background:var(--creme);color:var(--escuro);}
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
 
-/* HEADER */
-header{background:var(--verde);padding:0 20px;height:62px;display:flex;
-        align-items:center;justify-content:space-between;position:sticky;
-        top:0;z-index:99;box-shadow:0 2px 14px rgba(0,0,0,.28);}
-.logo{display:flex;align-items:center;gap:11px;}
-.logo-icon{width:38px;height:38px;background:var(--ouro);border-radius:9px;
-            display:flex;align-items:center;justify-content:center;font-size:19px;}
-.logo-nome{font-family:'DM Serif Display',serif;font-size:18px;color:var(--creme);line-height:1.1;}
-.logo-sub{font-size:9.5px;color:var(--menta);letter-spacing:1.2px;text-transform:uppercase;}
-.badge-data{background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.18);
-             border-radius:20px;padding:5px 13px;font-size:11px;color:var(--creme);
-             display:flex;align-items:center;gap:6px;white-space:nowrap;}
-.dot{width:7px;height:7px;background:var(--menta);border-radius:50%;animation:pulsar 2s infinite;}
-@keyframes pulsar{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
+  :root {
+    --green-dark: #1a3a2a;
+    --green-mid: #2d5a3d;
+    --green-accent: #4a9e6b;
+    --green-light: #e8f5ee;
+    --cream: #faf8f3;
+    --text-dark: #1a1a1a;
+    --text-mid: #4a4a4a;
+    --text-light: #888;
+    --red: #e53e3e;
+    --red-light: #fff5f5;
+    --green-up: #276749;
+    --green-up-bg: #f0fff4;
+    --border: #e8e4dc;
+    --card-bg: #ffffff;
+    --shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
 
-/* RESUMO BAR */
-.resumo-bar{background:var(--verde2);display:flex;}
-.resumo-item{flex:1;padding:9px 16px;font-size:11px;color:rgba(255,255,255,.9);
-              border-right:1px solid rgba(255,255,255,.1);line-height:1.5;}
-.resumo-item:last-child{border-right:none;}
-.resumo-label{font-weight:600;font-size:10px;opacity:.7;text-transform:uppercase;
-               letter-spacing:.5px;margin-bottom:2px;}
-.rv-alta{color:#86efac;} .rv-baixa{color:#fca5a5;}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* MAIN */
-main{max-width:960px;margin:0 auto;padding:18px 14px 60px;}
-.aviso{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;
-        padding:10px 14px;font-size:11.5px;color:#92400e;
-        margin-bottom:18px;display:flex;gap:8px;align-items:flex-start;line-height:1.5;}
-.sec{font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:2px;
-      color:var(--verde);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
-.sec::after{content:'';flex:1;height:1px;background:var(--creme2);}
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    min-height: 100vh;
+  }
 
-/* CARDS */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));
-       gap:12px;margin-bottom:28px;}
-.card{background:#fff;border-radius:14px;padding:14px 13px 12px;
-       border:1.5px solid var(--creme2);text-decoration:none;color:var(--escuro);
-       display:block;transition:all .18s;position:relative;overflow:hidden;}
-.card:hover,.card:active{border-color:var(--cor,var(--menta));
-  box-shadow:0 6px 22px rgba(0,0,0,.1);transform:translateY(-2px);}
-.card-topo{position:absolute;top:0;left:0;right:0;height:3px;
-            background:var(--cor);border-radius:14px 14px 0 0;}
-.card-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;}
-.card-icon{font-size:24px;line-height:1;}
-.card-spark{display:flex;flex-direction:column;align-items:flex-end;gap:2px;}
-.spark-datas{display:flex;justify-content:space-between;width:80px;
-              font-size:7.5px;color:#bbb;}
-.card-nome{font-size:9.5px;font-weight:600;text-transform:uppercase;
-            letter-spacing:.8px;color:var(--cinza);margin-bottom:3px;}
-.card-preco{font-family:'DM Serif Display',serif;font-size:20px;margin-bottom:1px;}
-.card-unidade{font-size:9.5px;color:var(--cinza);margin-bottom:7px;}
-.comp-bloco{border-top:1px solid var(--creme2);padding-top:7px;margin-top:4px;}
-.comp-row{display:flex;align-items:center;gap:5px;flex-wrap:wrap;}
-.comp-lbl{font-size:9px;color:#bbb;width:72px;flex-shrink:0;}
-.comp-val{font-size:11px;color:var(--cinza);font-weight:500;}
-.badge-sm{display:inline-flex;align-items:center;font-size:11px;font-weight:700;
-           padding:2px 7px;border-radius:12px;}
-.alta{background:#dcfce7;color:var(--alta);}
-.baixa{background:#fee2e2;color:var(--baixa);}
-.neutro{background:#f1f5f9;color:var(--neutro);}
-.card-fonte{font-size:8.5px;color:#ccc;margin-top:7px;}
+  /* HEADER */
+  header {
+    background: var(--green-dark);
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
 
-/* TABELA */
-.tabela-wrap{background:#fff;border-radius:14px;border:1.5px solid var(--creme2);
-              overflow-x:auto;margin-bottom:22px;}
-.tabela{width:100%;border-collapse:collapse;font-size:13px;}
-.tabela thead tr{background:var(--verde);}
-.tabela thead th{padding:11px 12px;text-align:left;font-size:10px;font-weight:600;
-                  color:var(--creme);letter-spacing:.5px;text-transform:uppercase;white-space:nowrap;}
-.tabela tbody tr{border-bottom:1px solid var(--creme2);transition:background .12s;}
-.tabela tbody tr:last-child{border-bottom:none;}
-.tabela tbody tr:hover{background:var(--creme);}
-.tabela tbody td{padding:10px 12px;white-space:nowrap;vertical-align:middle;}
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
 
-/* LINKS */
-.links-panel{background:#fff;border-radius:14px;border:1.5px solid var(--creme2);
-              padding:18px;margin-bottom:18px;}
-.links-panel h3{font-family:'DM Serif Display',serif;font-size:15px;
-                 color:var(--verde);margin-bottom:13px;}
-.links-wrap{display:flex;flex-wrap:wrap;gap:7px;}
-.link-btn{display:inline-block;padding:7px 13px;border-radius:22px;background:var(--creme);
-           border:1.5px solid var(--creme2);text-decoration:none;color:var(--verde);
-           font-size:12.5px;font-weight:500;transition:all .18s;}
-.link-btn:hover,.link-btn:active{background:var(--verde);color:var(--creme);border-color:var(--verde);}
+  .brand { display: flex; align-items: center; gap: 12px; }
 
-footer{text-align:center;font-size:10.5px;color:var(--cinza);
-        margin-top:28px;line-height:1.9;padding:0 16px 32px;}
+  .brand-logo {
+    width: 36px; height: 36px;
+    background: var(--green-accent);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
 
-@media(max-width:520px){
-  .grid{grid-template-columns:repeat(2,1fr);}
-  .resumo-bar{flex-direction:column;}
-  .resumo-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);}
-  .tabela{font-size:11px;}
-  .tabela thead th,.tabela tbody td{padding:8px 9px;}
-  .logo-nome{font-size:16px;}
-}
+  .brand-text h1 {
+    font-size: 16px; font-weight: 700;
+    color: #fff; letter-spacing: 0.5px;
+  }
+
+  .brand-text p {
+    font-size: 10px; font-weight: 500;
+    color: var(--green-accent); letter-spacing: 2px; text-transform: uppercase;
+  }
+
+  .header-date {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px; color: rgba(255,255,255,0.85);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .date-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--green-accent);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* TICKER */
+  .ticker-bar {
+    background: var(--green-mid);
+    padding: 8px 0;
+    overflow: hidden;
+  }
+
+  .ticker-track {
+    display: flex; gap: 32px;
+    animation: ticker 30s linear infinite;
+    white-space: nowrap;
+  }
+
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .ticker-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: rgba(255,255,255,0.85);
+    font-family: 'DM Mono', monospace;
+  }
+
+  .ticker-name { color: rgba(255,255,255,0.5); }
+  .ticker-price { color: #fff; font-weight: 500; }
+  .ticker-var.up { color: #6ee7a0; }
+  .ticker-var.down { color: #fc8181; }
+  .ticker-var.neutral { color: rgba(255,255,255,0.5); }
+
+  /* SUMMARY BAR */
+  .summary-bar {
+    background: var(--green-dark);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 10px 24px;
+  }
+
+  .summary-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex; gap: 32px; align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .summary-group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+  .summary-label {
+    font-size: 10px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: rgba(255,255,255,0.4);
+    display: flex; align-items: center; gap-4px;
+  }
+
+  .summary-chip {
+    background: rgba(255,255,255,0.07);
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 12px; color: rgba(255,255,255,0.85);
+    display: flex; align-items: center; gap: 4px;
+  }
+
+  .summary-chip.up { color: #6ee7a0; }
+  .summary-chip.down { color: #fc8181; }
+
+  /* MAIN */
+  main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 28px 24px;
+  }
+
+  .section-title {
+    font-size: 11px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--text-light);
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .section-title::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  /* CARD */
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+
+  .card-top {
+    display: flex; align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .card-icon { font-size: 22px; }
+
+  .card-spark { flex: 1; margin: 0 8px; }
+
+  .card-name {
+    font-size: 11px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--text-light);
+    margin-bottom: 4px;
+  }
+
+  .card-price {
+    font-size: 22px; font-weight: 700;
+    color: var(--text-dark); line-height: 1;
+    margin-bottom: 2px;
+  }
+
+  .card-unit {
+    font-size: 11px; color: var(--text-light);
+    margin-bottom: 12px;
+  }
+
+  .card-divider {
+    height: 1px; background: var(--border);
+    margin-bottom: 10px;
+  }
+
+  .card-stats { display: flex; flex-direction: column; gap: 4px; }
+
+  .card-stat {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px;
+  }
+
+  .stat-label { color: var(--text-light); }
+  .stat-value { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-mid); }
+
+  .badge {
+    display: inline-flex; align-items: center; gap: 3px;
+    padding: 2px 7px; border-radius: 4px;
+    font-size: 11px; font-weight: 600;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .badge.up { background: var(--green-up-bg); color: var(--green-up); }
+  .badge.down { background: var(--red-light); color: var(--red); }
+  .badge.neutral { background: #f5f5f5; color: #888; }
+
+  .card-footer {
+    margin-top: 10px;
+    font-size: 10px; color: var(--text-light);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  /* TABLE */
+  .table-wrap {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  table { width: 100%; border-collapse: collapse; }
+
+  thead { background: var(--green-dark); }
+
+  th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  td {
+    padding: 12px 16px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--green-light); }
+
+  .td-commodity { display: flex; align-items: center; gap: 10px; }
+  .td-icon { font-size: 18px; }
+  .td-name { font-weight: 600; font-size: 13px; }
+  .td-unit { font-size: 10px; color: var(--text-light); }
+  .td-price { font-family: 'DM Mono', monospace; font-weight: 600; }
+  .td-spark { width: 60px; }
+
+  /* LOADING */
+  .loading {
+    text-align: center; padding: 80px 20px;
+    color: var(--text-light); font-size: 14px;
+  }
+
+  .spinner {
+    width: 32px; height: 32px;
+    border: 3px solid var(--border);
+    border-top-color: var(--green-accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .error-msg {
+    background: #fff5f5; border: 1px solid #fed7d7;
+    border-radius: 8px; padding: 16px; color: #c53030;
+    font-size: 13px; margin: 20px 0;
+  }
+
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .card-price { font-size: 18px; }
+    .summary-bar { display: none; }
+    main { padding: 16px; }
+    .table-wrap { display: none; }
+  }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">
-    <div class="logo-icon">🌾</div>
-    <div>
-      <div class="logo-nome">Commodities Monitor</div>
-      <div class="logo-sub">Atacadão · Mercado</div>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-logo">🌾</div>
+      <div class="brand-text">
+        <h1>Commodities Monitor</h1>
+        <p>Atacadão · Mercado</p>
+      </div>
+    </div>
+    <div class="header-date">
+      <div class="date-dot"></div>
+      <span id="header-date">Carregando...</span>
     </div>
   </div>
-  <div class="badge-data"><span class="dot"></span><span>07/03/2025</span></div>
 </header>
 
-<div class="resumo-bar">
-  <div class="resumo-item">
-    <div class="resumo-label">⬆ Altas na semana</div>
-    <div class="rv-alta">☕ Café Arábica +2,41% · 🥛 Leite +1,83% · 🐄 Boi Gordo +1,24% · 🫘 Feijão Carioca +0,89% · 🫘 Soja +0,78% · 🐷 Suíno Vivo +0,37%</div>
+<div class="ticker-bar">
+  <div class="ticker-track" id="ticker-track">
+    <span style="color:rgba(255,255,255,0.4);font-size:12px;padding:0 20px;">Carregando dados...</span>
   </div>
-  <div class="resumo-item">
-    <div class="resumo-label">⬇ Baixas na semana</div>
-    <div class="rv-baixa">🌾 Trigo -1,13% · 🐔 Frango Vivo -0,62% · 🍚 Arroz em Casca -0,51% · 🌽 Milho -0,34%</div>
+</div>
+
+<div class="summary-bar">
+  <div class="summary-inner" id="summary-bar">
+    <div class="summary-group">
+      <span class="summary-label">▲ Altas</span>
+      <span id="altas-chips" style="display:flex;gap:6px;flex-wrap:wrap;"></span>
+    </div>
+    <div class="summary-group">
+      <span class="summary-label">▼ Baixas</span>
+      <span id="baixas-chips" style="display:flex;gap:6px;flex-wrap:wrap;"></span>
+    </div>
   </div>
 </div>
 
 <main>
-  <div class="aviso">⚠️ <span>Preços de referência <strong>CEPEA/ESALQ-USP</strong>.
-  Toque em qualquer commodity para o indicador oficial.</span></div>
+  <div class="section-title" id="section-title">📊 Preços · Tendência 4 Semanas</div>
+  <div class="grid" id="cards-grid">
+    <div class="loading"><div class="spinner"></div>Carregando preços...</div>
+  </div>
 
-  <div class="sec">📊 Preços · 07/03/2025 · tendência 4 semanas</div>
-  <div class="grid">
-      <a href="https://cepea.org.br/br/indicador/soja.aspx" target="_blank" class="card" style="--cor:#16a34a">
-        <div class="card-topo"></div>
-        <div class="card-head">
-          <span class="card-icon">🫘</span>
-          <div class="card-spark">
-            <svg width="80" height="32" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,29.0 27.7,20.8 52.3,9.7 77.0,3.0 77.0,32 3.0,32" fill="#16a34a" fill-opacity="0.12"/><polyline points="3.0,29.0 27.7,20.8 52.3,9.7 77.0,3.0" fill="none" stroke="#16a34a" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="3.0" r="2.8" fill="#16a34a"/></svg>
-            <div class="spark-datas"><span>14/02/2025</span><span>07/03/2025</span></div>
-          </div>
-        </div>
-        <div class="card-nome">Soja</div>
-        <div class="card-preco">R$ 116,30</div>
-        <div class="card-unidade">saca 60kg · PR</div>
-        
-        <div class="comp-bloco">
-          <div class="comp-row">
-            <span class="comp-lbl">Semana ant.</span>
-            <span class="comp-val">R$ 115,40</span>
-            <span class="badge-sm alta">▲ +0,78%</span>
-          </div>
-          <div class="comp-row" style="margin-top:3px">
-            <span class="comp-lbl">vs 4 semanas</span>
-            <span class="badge-sm alta">▲ +3,10%</span>
-          </div>
-        </div>
-        <div class="card-fonte">CEPEA/ESALQ · 07/03/2025</div>
-      </a>
-      <a href="https://cepea.org.br/br/indicador/milho.aspx" target="_blank" class="card" style="--cor:#ca8a04">
-        <div class="card-topo"></div>
-        <div class="card-head">
-          <span class="card-icon">🌽</span>
-          <div class="card-spark">
-            <svg width="80" height="32" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,3.0 27.7,14.0 52.3,25.7 77.0,29.0 77.0,32 3.0,32" fill="#ca8a04" fill-opacity="0.12"/><polyline points="3.0,3.0 27.7,14.0 52.3,25.7 77.0,29.0" fill="none" stroke="#ca8a04" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="29.0" r="2.8" fill="#ca8a04"/></svg>
-            <div class="spark-datas"><span>14/02/2025</span><span>07/03/2025</span></div>
-          </div>
-        </div>
-        <div class="card-nome">Milho</div>
-        <div class="card-preco">R$ 62,45</div>
-        <div class="card-unidade">saca 60kg · SP</div>
-        
-        <div class="comp-bloco">
-          <div class="comp-row">
-            <span class="comp-lbl">Semana ant.</span>
-            <span class="comp-val">R$ 62,66</span>
-            <span class="badge-sm baixa">▼ -0,34%</span>
-          </div>
-          <div class="comp-row" style="margin-top:3px">
-            <span class="comp-lbl">vs 4 semanas</span>
-            <span class="badge-sm baixa">▼ -2,57%</span>
-          </div>
-        </div>
-        <div class="card-fonte">CEPEA/ESALQ · 07/03/2025</div>
-      </a>
-      <a href="https://cepea.org.br/br/indicador/boi-gordo.aspx" target="_blank" class="card" style="--cor:#dc2626">
-        <div class="card-topo"></div>
-        <div class="card-head">
-          <span class="card-icon">🐄</span>
-          <div class="card-spark">
-            <svg width="80" height="32" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,29.0 27.7,19.9 52.3,12.8 77.0,3.0 77.0,32 3.0,32" fill="#dc2626" fill-opacity="0.12"/><polyline points="3.0,29.0 27.7,19.9 52.3,12.8 77.0,3.0" fill="none" stroke="#dc2626" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="3.0" r="2.8" fill="#dc2626"/></svg>
-            <div class="spark-datas"><span>14/02/2025</span><span>07/03/2025</span></div>
-          </div>
-        </div>
-        <div class="card-nome">Boi Gordo</div>
-        <div class="card-preco">R$ 318,50</div>
-        <div class="card-unidade">arroba · SP</div>
-        
-        <div class="comp-bloco">
-          <div class="comp-row">
-            <span class="comp-lbl">Semana ant.</span>
-            <span class="comp-val">R$ 314,60</span>
-            <span class="badge-sm alta">▲ +1,24%</span>
-          </div>
-          <div class="comp-row" style="margin-top:3px">
-            <span class="comp-lbl">vs 4 semanas</span>
-            <span class="badge-sm alta">▲ +3,34%</span>
-          </div>
-        </div>
-        <div class="card-fonte">CEPEA/ESALQ · 07/03/2025</div>
-      </a>
-      <a href="https://cepea.org.br/br/indicador/cafe.aspx" target="_blank" class="card" style="--cor:#92400e">
-        <div class="card-topo"></div>
-        <div class="card-head">
-          <span class="card-icon">☕</span>
-          <div class="card-spark">
-            <svg width="80" height="32" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,29.0 27.7,20.7 52.3,11.0 77.0,3.0 77.0,32 3.0,32" fill="#92400e" fill-opacity="0.12"/><polyline points="3.0,29.0 27.7,20.7 52.3,11.0 77.0,3.0" fill="none" stroke="#92400e" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="3.0" r="2.8" fill="#92400e"/></svg>
-            <div class="spark-datas"><span>14/02/2025</span><span>07/03/2025</span></div>
-          </div>
-        </div>
-        <div class="card-nome">Café Arábica</div>
-        <div class="card-preco">R$2.380,00</div>
-        <div class="card-unidade">saca 60kg · SP</div>
-        
-        <div class="comp-bloco">
-          <div class="comp-row">
-            <span class="comp-lbl">Semana ant.</span>
-            <span class="comp-val">R$2.324,00</span>
-            <span class="badge-sm alta">▲ +2,41%</span>
-          </div>
-          <div class="comp-row" style="margin-top:3px">
-            <span class="comp-lbl">vs 4 semanas</span>
-            <span class="badge-sm alta">▲ +8,28%</span>
-          </div>
-        </div>
-        <div class="card-fonte">CEPEA/ESALQ · 07/03/2025</div>
-      </a>
-      <a href="https://cepea.org.br/br/indicador/acucar.aspx" target="_blank" class="card" style="--cor:#7c3aed">
-        <div class="card-topo"></div>
-        <div class="card-head">
-          <span class="card-icon">🍬</span>
-          <div class="card-spark">
-            <svg width="80" height="32" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,3.0 27.7,13.3 52.3,29.0 77.0,29.0 77.0,32 3.0,32" fill="#7c3aed" fill-opacity="0.12"/><polyline points="3.0,3.0 27.7,13.3 52.3,29.0 77.0,29.0" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="29.0" r="2.8" fill="#7c3aed"/></svg>
-            <div class="spark-datas"><span>14/02/2025</span><span>07/03/2025</span></div>
-          </div>
-        </div>
-        <div class="card-nome">Açúcar Cristal</div>
-        <div class="card-preco">R$ 144,20</div>
-        <div class="card-unidade">saca 50kg · SP</div>
-        
-        <div class="comp-bloco">
-          <div class="comp-row">
-            <span class="comp-lbl">Semana ant.</span>
-            <span class="comp-val">R$ 144,20</span>
-            <span class="badge-sm neutro">— +0,00%</span>
-          </div>
-          <div class="comp-row" style="margin-top:3px">
-            <span class="comp-lbl">vs 4 semanas</span>
-            <span class="badge-sm baixa">▼ -2,90%</span>
-          </div>
-        </div>
-        <div class="card-fonte">CEPEA/ESALQ · 07/03/2025</div>
-      </a>
-      <a href="https://cepea.org.br/br/indicador/frango.aspx" target="_blank" class="card" style="--cor:#f97316">
-        <div class="card-topo"></div>
-        <div class="card-head">
-          <span class="card-icon">🐔</span>
-          <div class="card-spark">
-            <svg width="80" height="32" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,3.0 27.7,13.7 52.3,22.9 77.0,29.0 77.0,32 3.0,32" fill="#f97316" fill-opacity="0.12"/><polyline points="3.0,3.0 27.7,13.7 52.3,22.9 77.0,29.0" fill="none" stroke="#f97316" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="29.0" r="2.8" fill="#f97316"/></svg>
-            <div class="spark-datas"><span>14/02/2025</span><span>07/03/2025</span></div>
-          </div>
-        </div>
-        <div class="card-nome">Frango Vivo</div>
-        <div class="card-preco">R$ 6,38</div>
-        <div class="card-unidade">kg · SP</div>
-        
-        <div class="comp-bloco">
-          <div class="comp-row">
-            <span class="comp-lbl">Semana ant.</span>
-            <span class="comp-val">R$ 6,42</span>
-            <span class="badge-sm baixa">▼ -0,62%</span>
-          </div>
-          <div class="comp-row" style="margin-top:3px">
-            <span class="comp-lbl">vs 4 semanas</span>
-            <span class="badge-sm baixa">▼ -2,60%</span>
-          </div>
-        </div>
-        <div class="card-fonte">CEPEA/ESALQ · 07/03/2025</div>
-      </a>
-      <a href="https://cepea.org.br/br/indicador/suino.aspx" target="_blank" class="card" style="--cor:#ec4899">
-        <div class="card-topo"></div>
-        <div class="card-head">
-          <span class="card-icon">🐷</span>
-          <div class="card-spark">
-            <svg width="80" height="32" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,29.0 27.7,18.3 52.3,7.6 77.0,3.0 77.0,32 3.0,32" fill="#ec4899" fill-opacity="0.12"/><polyline points="3.0,29.0 27.7,18.3 52.3,7.6 77.0,3.0" fill="none" stroke="#ec4899" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="3.0" r="2.8" fill="#ec4899"/></svg>
-            <div class="spark-datas"><span>14/02/2025</span><span>07/03/2025</span></div>
-          </div>
-        </div>
-        <div class="card-nome">Suíno Vivo</div>
-        <div class="card-preco">R$ 8,15</div>
-        <div class="card-unidade">kg · SP</div>
-        
-        <div class="comp-bloco">
-          <div class="comp-row">
-            <span class="comp-lbl">Semana ant.</span>
-            <span class="comp-val">R$ 8,12</span>
-            <span class="badge-sm alta">▲ +0,37%</span>
-          </div>
-          <div class="comp-row" style="margin-top:3px">
-            <span class="comp-lbl">vs 4 semanas</span>
-            <span class="badge-sm alta">▲ +2,13%</span>
-          </div>
-        </div>
-        <div class="card-fonte">CEPEA/ESALQ · 07/03/2025</div>
-      </a>
-      <a href="https://cepea.org.br/br/indicador/trigo.aspx" target="_blank" class="card" style="--cor:#d97706">
-        <div class="card-topo"></div>
-        <div class="card-head">
-          <span class="card-icon">🌾</span>
-          <div class="card-spark">
-            <svg width="80" height="32" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,3.0 27.7,11.7 52.3,20.3 77.0,29.0 77.0,32 3.0,32" fill="#d97706" fill-opacity="0.12"/><polyline points="3.0,3.0 27.7,11.7 52.3,20.3 77.0,29.0" fill="none" stroke="#d97706" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="29.0" r="2.8" fill="#d97706"/></svg>
-            <div class="spark-datas"><span>14/02/2025</span><span>07/03/2025</span></div>
-          </div>
-        </div>
-        <div class="card-nome">Trigo</div>
-        <div class="card-preco">R$ 78,50</div>
-        <div class="card-unidade">saca 60kg · PR</div>
-        
-        <div class="comp-bloco">
-          <div class="comp-row">
-            <span class="comp-lbl">Semana ant.</span>
-            <span class="comp-val">R$ 79,40</span>
-            <span class="badge-sm baixa">▼ -1,13%</span>
-          </div>
-          <div class="comp-row" style="margin-top:3px">
-            <span class="comp-lbl">vs 4 semanas</span>
-            <span class="badge-sm baixa">▼ -3,33%</span>
-          </div>
-        </div>
-        <div class="card-fonte">CEPEA/ESALQ · 07/03/2025</div>
-      </a>
-      <a href="https://cepea.org.br/br/indicador/arroz.aspx" target="_blank" class="card" style="--cor:#0891b2">
-        <div class="card-topo"></div>
-        <div class="card-head">
-          <span class="card-icon">🍚</span>
-          <div class="card-spark">
-            <svg width="80" height="32" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,3.0 27.7,13.8 52.3,25.8 77.0,29.0 77.0,32 3.0,32" fill="#0891b2" fill-opacity="0.12"/><polyline points="3.0,3.0 27.7,13.8 52.3,25.8 77.0,29.0" fill="none" stroke="#0891b2" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="29.0" r="2.8" fill="#0891b2"/></svg>
-            <div class="spark-datas"><span>14/02/2025</span><span>07/03/2025</span></div>
-          </div>
-        </div>
-        <div class="card-nome">Arroz em Casca</div>
-        <div class="card-preco">R$ 42,80</div>
-        <div class="card-unidade">saca 50kg · RS</div>
-        
-        <div class="comp-bloco">
-          <div class="comp-row">
-            <span class="comp-lbl">Semana ant.</span>
-            <span class="comp-val">R$ 43,02</span>
-            <span class="badge-sm baixa">▼ -0,51%</span>
-          </div>
-          <div class="comp-row" style="margin-top:3px">
-            <span class="comp-lbl">vs 4 semanas</span>
-            <span class="badge-sm baixa">▼ -4,04%</span>
-          </div>
-        </div>
-        <div class="card-fonte">CEPEA/ESALQ · 07/03/2025</div>
-      </a>
-      <a href="https://cepea.org.br/br/indicador/feijao.aspx" target="_blank" class="card" style="--cor:#854d0e">
-        <div class="card-topo"></div>
-        <div class="card-head">
-          <span class="card-icon">🫘</span>
-          <div class="card-spark">
-            <svg width="80" height="32" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,29.0 27.7,19.2 52.3,7.5 77.0,3.0 77.0,32 3.0,32" fill="#854d0e" fill-opacity="0.12"/><polyline points="3.0,29.0 27.7,19.2 52.3,7.5 77.0,3.0" fill="none" stroke="#854d0e" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="3.0" r="2.8" fill="#854d0e"/></svg>
-            <div class="spark-datas"><span>14/02/2025</span><span>07/03/2025</span></div>
-          </div>
-        </div>
-        <div class="card-nome">Feijão Carioca</div>
-        <div class="card-preco">R$ 198,40</div>
-        <div class="card-unidade">saca 60kg · PR</div>
-        
-        <div class="comp-bloco">
-          <div class="comp-row">
-            <span class="comp-lbl">Semana ant.</span>
-            <span class="comp-val">R$ 196,65</span>
-            <span class="badge-sm alta">▲ +0,89%</span>
-          </div>
-          <div class="comp-row" style="margin-top:3px">
-            <span class="comp-lbl">vs 4 semanas</span>
-            <span class="badge-sm alta">▲ +5,36%</span>
-          </div>
-        </div>
-        <div class="card-fonte">CEPEA/ESALQ · 07/03/2025</div>
-      </a>
-      <a href="https://cepea.org.br/br/indicador/leite.aspx" target="_blank" class="card" style="--cor:#0284c7">
-        <div class="card-topo"></div>
-        <div class="card-head">
-          <span class="card-icon">🥛</span>
-          <div class="card-spark">
-            <svg width="80" height="32" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,29.0 27.7,13.4 52.3,23.8 77.0,3.0 77.0,32 3.0,32" fill="#0284c7" fill-opacity="0.12"/><polyline points="3.0,29.0 27.7,13.4 52.3,23.8 77.0,3.0" fill="none" stroke="#0284c7" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="77.0" cy="3.0" r="2.8" fill="#0284c7"/></svg>
-            <div class="spark-datas"><span>14/02/2025</span><span>07/03/2025</span></div>
-          </div>
-        </div>
-        <div class="card-nome">Leite</div>
-        <div class="card-preco">R$ 2,23</div>
-        <div class="card-unidade">por litro · SP</div>
-        
-        <div class="comp-bloco">
-          <div class="comp-row">
-            <span class="comp-lbl">Semana ant.</span>
-            <span class="comp-val">R$ 2,19</span>
-            <span class="badge-sm alta">▲ +1,83%</span>
-          </div>
-          <div class="comp-row" style="margin-top:3px">
-            <span class="comp-lbl">vs 4 semanas</span>
-            <span class="badge-sm alta">▲ +2,29%</span>
-          </div>
-        </div>
-        <div class="card-fonte">CEPEA/ESALQ · 07/03/2025</div>
-      </a></div>
-
-  
-    <div class="sec">📅 Comparativo · 14/02/2025 · 21/02/2025 · 28/02/2025 · 07/03/2025</div>
-    <div class="tabela-wrap">
-      <table class="tabela">
-        <thead><tr>
+  <div class="section-title">📋 Tabela Comparativa</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
           <th>Commodity</th>
-          <th>4 semanas</th>
-          <th>28/02/2025</th>
-          <th>07/03/2025</th>
-          <th>Var. semana</th>
-          <th>Var. 4 sem.</th>
-        </tr></thead>
-        <tbody><tr>
-          <td style="padding:10px 12px">🫘 <strong>Soja</strong></td>
-          <td style="padding:10px 12px"><svg width="64" height="24" viewBox="0 0 64 24" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,21.0 22.3,15.3 41.7,7.6 61.0,3.0 61.0,24 3.0,24" fill="#16a34a" fill-opacity="0.12"/><polyline points="3.0,21.0 22.3,15.3 41.7,7.6 61.0,3.0" fill="none" stroke="#16a34a" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="61.0" cy="3.0" r="2.8" fill="#16a34a"/></svg></td>
-          <td style="padding:10px 12px;color:#777">R$ 115,40</td>
-          <td style="padding:10px 12px;font-weight:600">R$ 116,30</td>
-          <td style="padding:10px 12px">
-            <span style="background:#dcfce7;color:#16a34a;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▲ +0,78%</span>
-          </td>
-          <td style="padding:10px 12px">
-            <span style="background:#dcfce7;color:#16a34a;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▲ +3,10%</span>
-          </td>
-        </tr><tr>
-          <td style="padding:10px 12px">🌽 <strong>Milho</strong></td>
-          <td style="padding:10px 12px"><svg width="64" height="24" viewBox="0 0 64 24" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,3.0 22.3,10.6 41.7,18.7 61.0,21.0 61.0,24 3.0,24" fill="#ca8a04" fill-opacity="0.12"/><polyline points="3.0,3.0 22.3,10.6 41.7,18.7 61.0,21.0" fill="none" stroke="#ca8a04" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="61.0" cy="21.0" r="2.8" fill="#ca8a04"/></svg></td>
-          <td style="padding:10px 12px;color:#777">R$ 62,66</td>
-          <td style="padding:10px 12px;font-weight:600">R$ 62,45</td>
-          <td style="padding:10px 12px">
-            <span style="background:#fee2e2;color:#dc2626;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▼ -0,34%</span>
-          </td>
-          <td style="padding:10px 12px">
-            <span style="background:#fee2e2;color:#dc2626;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▼ -2,57%</span>
-          </td>
-        </tr><tr>
-          <td style="padding:10px 12px">🐄 <strong>Boi Gordo</strong></td>
-          <td style="padding:10px 12px"><svg width="64" height="24" viewBox="0 0 64 24" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,21.0 22.3,14.7 41.7,9.8 61.0,3.0 61.0,24 3.0,24" fill="#dc2626" fill-opacity="0.12"/><polyline points="3.0,21.0 22.3,14.7 41.7,9.8 61.0,3.0" fill="none" stroke="#dc2626" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="61.0" cy="3.0" r="2.8" fill="#dc2626"/></svg></td>
-          <td style="padding:10px 12px;color:#777">R$ 314,60</td>
-          <td style="padding:10px 12px;font-weight:600">R$ 318,50</td>
-          <td style="padding:10px 12px">
-            <span style="background:#dcfce7;color:#16a34a;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▲ +1,24%</span>
-          </td>
-          <td style="padding:10px 12px">
-            <span style="background:#dcfce7;color:#16a34a;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▲ +3,34%</span>
-          </td>
-        </tr><tr>
-          <td style="padding:10px 12px">☕ <strong>Café Arábica</strong></td>
-          <td style="padding:10px 12px"><svg width="64" height="24" viewBox="0 0 64 24" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,21.0 22.3,15.3 41.7,8.5 61.0,3.0 61.0,24 3.0,24" fill="#92400e" fill-opacity="0.12"/><polyline points="3.0,21.0 22.3,15.3 41.7,8.5 61.0,3.0" fill="none" stroke="#92400e" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="61.0" cy="3.0" r="2.8" fill="#92400e"/></svg></td>
-          <td style="padding:10px 12px;color:#777">R$2.324,00</td>
-          <td style="padding:10px 12px;font-weight:600">R$2.380,00</td>
-          <td style="padding:10px 12px">
-            <span style="background:#dcfce7;color:#16a34a;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▲ +2,41%</span>
-          </td>
-          <td style="padding:10px 12px">
-            <span style="background:#dcfce7;color:#16a34a;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▲ +8,28%</span>
-          </td>
-        </tr><tr>
-          <td style="padding:10px 12px">🍬 <strong>Açúcar Cristal</strong></td>
-          <td style="padding:10px 12px"><svg width="64" height="24" viewBox="0 0 64 24" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,3.0 22.3,10.1 41.7,21.0 61.0,21.0 61.0,24 3.0,24" fill="#7c3aed" fill-opacity="0.12"/><polyline points="3.0,3.0 22.3,10.1 41.7,21.0 61.0,21.0" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="61.0" cy="21.0" r="2.8" fill="#7c3aed"/></svg></td>
-          <td style="padding:10px 12px;color:#777">R$ 144,20</td>
-          <td style="padding:10px 12px;font-weight:600">R$ 144,20</td>
-          <td style="padding:10px 12px">
-            <span style="background:#f1f5f9;color:#64748b;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">— +0,00%</span>
-          </td>
-          <td style="padding:10px 12px">
-            <span style="background:#fee2e2;color:#dc2626;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▼ -2,90%</span>
-          </td>
-        </tr><tr>
-          <td style="padding:10px 12px">🐔 <strong>Frango Vivo</strong></td>
-          <td style="padding:10px 12px"><svg width="64" height="24" viewBox="0 0 64 24" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,3.0 22.3,10.4 41.7,16.8 61.0,21.0 61.0,24 3.0,24" fill="#f97316" fill-opacity="0.12"/><polyline points="3.0,3.0 22.3,10.4 41.7,16.8 61.0,21.0" fill="none" stroke="#f97316" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="61.0" cy="21.0" r="2.8" fill="#f97316"/></svg></td>
-          <td style="padding:10px 12px;color:#777">R$ 6,42</td>
-          <td style="padding:10px 12px;font-weight:600">R$ 6,38</td>
-          <td style="padding:10px 12px">
-            <span style="background:#fee2e2;color:#dc2626;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▼ -0,62%</span>
-          </td>
-          <td style="padding:10px 12px">
-            <span style="background:#fee2e2;color:#dc2626;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▼ -2,60%</span>
-          </td>
-        </tr><tr>
-          <td style="padding:10px 12px">🐷 <strong>Suíno Vivo</strong></td>
-          <td style="padding:10px 12px"><svg width="64" height="24" viewBox="0 0 64 24" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,21.0 22.3,13.6 41.7,6.2 61.0,3.0 61.0,24 3.0,24" fill="#ec4899" fill-opacity="0.12"/><polyline points="3.0,21.0 22.3,13.6 41.7,6.2 61.0,3.0" fill="none" stroke="#ec4899" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="61.0" cy="3.0" r="2.8" fill="#ec4899"/></svg></td>
-          <td style="padding:10px 12px;color:#777">R$ 8,12</td>
-          <td style="padding:10px 12px;font-weight:600">R$ 8,15</td>
-          <td style="padding:10px 12px">
-            <span style="background:#dcfce7;color:#16a34a;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▲ +0,37%</span>
-          </td>
-          <td style="padding:10px 12px">
-            <span style="background:#dcfce7;color:#16a34a;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▲ +2,13%</span>
-          </td>
-        </tr><tr>
-          <td style="padding:10px 12px">🌾 <strong>Trigo</strong></td>
-          <td style="padding:10px 12px"><svg width="64" height="24" viewBox="0 0 64 24" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,3.0 22.3,9.0 41.7,15.0 61.0,21.0 61.0,24 3.0,24" fill="#d97706" fill-opacity="0.12"/><polyline points="3.0,3.0 22.3,9.0 41.7,15.0 61.0,21.0" fill="none" stroke="#d97706" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="61.0" cy="21.0" r="2.8" fill="#d97706"/></svg></td>
-          <td style="padding:10px 12px;color:#777">R$ 79,40</td>
-          <td style="padding:10px 12px;font-weight:600">R$ 78,50</td>
-          <td style="padding:10px 12px">
-            <span style="background:#fee2e2;color:#dc2626;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▼ -1,13%</span>
-          </td>
-          <td style="padding:10px 12px">
-            <span style="background:#fee2e2;color:#dc2626;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▼ -3,33%</span>
-          </td>
-        </tr><tr>
-          <td style="padding:10px 12px">🍚 <strong>Arroz em Casca</strong></td>
-          <td style="padding:10px 12px"><svg width="64" height="24" viewBox="0 0 64 24" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,3.0 22.3,10.5 41.7,18.8 61.0,21.0 61.0,24 3.0,24" fill="#0891b2" fill-opacity="0.12"/><polyline points="3.0,3.0 22.3,10.5 41.7,18.8 61.0,21.0" fill="none" stroke="#0891b2" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="61.0" cy="21.0" r="2.8" fill="#0891b2"/></svg></td>
-          <td style="padding:10px 12px;color:#777">R$ 43,02</td>
-          <td style="padding:10px 12px;font-weight:600">R$ 42,80</td>
-          <td style="padding:10px 12px">
-            <span style="background:#fee2e2;color:#dc2626;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▼ -0,51%</span>
-          </td>
-          <td style="padding:10px 12px">
-            <span style="background:#fee2e2;color:#dc2626;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▼ -4,04%</span>
-          </td>
-        </tr><tr>
-          <td style="padding:10px 12px">🫘 <strong>Feijão Carioca</strong></td>
-          <td style="padding:10px 12px"><svg width="64" height="24" viewBox="0 0 64 24" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,21.0 22.3,14.2 41.7,6.1 61.0,3.0 61.0,24 3.0,24" fill="#854d0e" fill-opacity="0.12"/><polyline points="3.0,21.0 22.3,14.2 41.7,6.1 61.0,3.0" fill="none" stroke="#854d0e" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="61.0" cy="3.0" r="2.8" fill="#854d0e"/></svg></td>
-          <td style="padding:10px 12px;color:#777">R$ 196,65</td>
-          <td style="padding:10px 12px;font-weight:600">R$ 198,40</td>
-          <td style="padding:10px 12px">
-            <span style="background:#dcfce7;color:#16a34a;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▲ +0,89%</span>
-          </td>
-          <td style="padding:10px 12px">
-            <span style="background:#dcfce7;color:#16a34a;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▲ +5,36%</span>
-          </td>
-        </tr><tr>
-          <td style="padding:10px 12px">🥛 <strong>Leite</strong></td>
-          <td style="padding:10px 12px"><svg width="64" height="24" viewBox="0 0 64 24" xmlns="http://www.w3.org/2000/svg" style="display:block"><polygon points="3.0,21.0 22.3,10.2 41.7,17.4 61.0,3.0 61.0,24 3.0,24" fill="#0284c7" fill-opacity="0.12"/><polyline points="3.0,21.0 22.3,10.2 41.7,17.4 61.0,3.0" fill="none" stroke="#0284c7" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><circle cx="61.0" cy="3.0" r="2.8" fill="#0284c7"/></svg></td>
-          <td style="padding:10px 12px;color:#777">R$ 2,19</td>
-          <td style="padding:10px 12px;font-weight:600">R$ 2,23</td>
-          <td style="padding:10px 12px">
-            <span style="background:#dcfce7;color:#16a34a;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▲ +1,83%</span>
-          </td>
-          <td style="padding:10px 12px">
-            <span style="background:#dcfce7;color:#16a34a;padding:2px 9px;border-radius:12px;font-size:12px;font-weight:700">▲ +2,29%</span>
-          </td>
-        </tr></tbody>
-      </table>
-    </div>
-
-  <div class="sec">🔗 Acesso Direto CEPEA</div>
-  <div class="links-panel">
-    <h3>Indicadores Oficiais ESALQ-USP</h3>
-    <div class="links-wrap"><a href="https://cepea.org.br/br/indicador/soja.aspx" target="_blank" class="link-btn">🫘 Soja</a><a href="https://cepea.org.br/br/indicador/milho.aspx" target="_blank" class="link-btn">🌽 Milho</a><a href="https://cepea.org.br/br/indicador/boi-gordo.aspx" target="_blank" class="link-btn">🐄 Boi Gordo</a><a href="https://cepea.org.br/br/indicador/cafe.aspx" target="_blank" class="link-btn">☕ Café Arábica</a><a href="https://cepea.org.br/br/indicador/acucar.aspx" target="_blank" class="link-btn">🍬 Açúcar Cristal</a><a href="https://cepea.org.br/br/indicador/frango.aspx" target="_blank" class="link-btn">🐔 Frango Vivo</a><a href="https://cepea.org.br/br/indicador/suino.aspx" target="_blank" class="link-btn">🐷 Suíno Vivo</a><a href="https://cepea.org.br/br/indicador/trigo.aspx" target="_blank" class="link-btn">🌾 Trigo</a><a href="https://cepea.org.br/br/indicador/arroz.aspx" target="_blank" class="link-btn">🍚 Arroz em Casca</a><a href="https://cepea.org.br/br/indicador/feijao.aspx" target="_blank" class="link-btn">🫘 Feijão Carioca</a><a href="https://cepea.org.br/br/indicador/leite.aspx" target="_blank" class="link-btn">🥛 Leite</a></div>
+          <th>Spark</th>
+          <th>Semana ant.</th>
+          <th>Atual</th>
+          <th>Var. Semana</th>
+          <th>Var. 4 Sem.</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <tr><td colspan="6" class="loading">Carregando...</td></tr>
+      </tbody>
+    </table>
   </div>
 </main>
 
-<footer>
-  Fonte: CEPEA/ESALQ-USP ·
-  <a href="https://cepea.org.br/br" target="_blank" style="color:var(--verde)">cepea.org.br</a><br>
-  Inteligência de Mercado · Atacadão · 2026
-</footer>
+<script>
+const ICONS = {
+  soja: '🫘', milho: '🌽', 'boi-gordo': '🐄', cafe: '☕',
+  acucar: '🍬', frango: '🐔', suino: '🐷', trigo: '🌾',
+  arroz: '🍚', feijao: '🫘', leite: '🥛'
+};
+
+const NAMES = {
+  soja: 'Soja', milho: 'Milho', 'boi-gordo': 'Boi Gordo', cafe: 'Café Arábica',
+  acucar: 'Açúcar Cristal', frango: 'Frango Vivo', suino: 'Suíno Vivo',
+  trigo: 'Trigo', arroz: 'Arroz em Casca', feijao: 'Feijão Carioca', leite: 'Leite'
+};
+
+const UNITS = {
+  soja: 'saca 60kg · PR', milho: 'saca 60kg · SP', 'boi-gordo': 'arroba · SP',
+  cafe: 'saca 60kg · SP', acucar: 'saca 50kg · SP', frango: 'kg · SP',
+  suino: 'kg · SP', trigo: 'saca 60kg · PR', arroz: 'saca 50kg · RS',
+  feijao: 'saca 60kg · PR', leite: 'por litro · SP'
+};
+
+const CEPEA = {
+  soja: 'https://cepea.esalq.usp.br/br/indicador/soja.aspx',
+  milho: 'https://cepea.esalq.usp.br/br/indicador/milho.aspx',
+  'boi-gordo': 'https://cepea.esalq.usp.br/br/indicador/boi-gordo.aspx',
+  cafe: 'https://cepea.esalq.usp.br/br/indicador/cafe.aspx',
+  acucar: 'https://cepea.esalq.usp.br/br/indicador/acucar.aspx',
+  frango: 'https://cepea.esalq.usp.br/br/indicador/frango.aspx',
+  suino: 'https://cepea.esalq.usp.br/br/indicador/suino.aspx',
+  trigo: 'https://cepea.esalq.usp.br/br/indicador/trigo.aspx',
+  arroz: 'https://cepea.esalq.usp.br/br/indicador/arroz.aspx',
+  feijao: 'https://cepea.esalq.usp.br/br/indicador/feijao.aspx',
+  leite: 'https://cepea.esalq.usp.br/br/indicador/leite.aspx'
+};
+
+const COLORS = {
+  soja: '#16a34a', milho: '#ca8a04', 'boi-gordo': '#dc2626', cafe: '#78350f',
+  acucar: '#7c3aed', frango: '#ea580c', suino: '#db2777', trigo: '#b45309',
+  arroz: '#0284c7', feijao: '#65a30d', leite: '#0891b2'
+};
+
+function fmt(v) {
+  return 'R$ ' + v.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+}
+
+function pct(a, b) {
+  return ((a - b) / b * 100);
+}
+
+function badgeClass(p) {
+  if (p > 0.05) return 'up';
+  if (p < -0.05) return 'down';
+  return 'neutral';
+}
+
+function badgeArrow(p) {
+  if (p > 0.05) return '▲';
+  if (p < -0.05) return '▼';
+  return '—';
+}
+
+function sparkSVG(values, color, w=80, h=32) {
+  if (values.length < 2) return '';
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const range = max - min || 1;
+  const pad = 3;
+  const xs = values.map((_, i) => pad + (i / (values.length - 1)) * (w - pad*2));
+  const ys = values.map(v => h - pad - ((v - min) / range) * (h - pad*2));
+  const poly = xs.map((x, i) => `${x},${ys[i]}`).join(' ');
+  const area = `${xs[0]},${h} ` + poly + ` ${xs[xs.length-1]},${h}`;
+  const lx = xs[xs.length-1], ly = ys[ys.length-1];
+  return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
+    <polygon points="${area}" fill="${color}" fill-opacity="0.15"/>
+    <polyline points="${poly}" fill="none" stroke="${color}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="${lx}" cy="${ly}" r="3" fill="${color}"/>
+  </svg>`;
+}
+
+function sparkSVGSmall(values, color) {
+  return sparkSVG(values, color, 60, 24);
+}
+
+async function loadData() {
+  try {
+    const r = await fetch('precos.json?t=' + Date.now());
+    if (!r.ok) throw new Error('Erro ao carregar precos.json');
+    return await r.json();
+  } catch(e) {
+    document.getElementById('cards-grid').innerHTML = `<div class="error-msg">⚠️ Erro ao carregar precos.json: ${e.message}</div>`;
+    return null;
+  }
+}
+
+function buildDashboard(data) {
+  const hist = data.historico;
+  if (!hist || hist.length < 2) return;
+
+  const janela = hist.slice(-4);
+  const atual = janela[janela.length - 1];
+  const anterior = janela[janela.length - 2];
+  const mais_antiga = janela[0];
+
+  // Header date
+  document.getElementById('header-date').textContent = atual.data;
+  document.getElementById('section-title').textContent = `📊 Preços · ${atual.data} · Tendência ${janela.length} Semanas`;
+
+  // Build commodity data
+  const commodities = atual.commodities.map(c => {
+    const id = c.id;
+    const valorAtual = c.valor_num;
+    const cAnt = anterior.commodities.find(x => x.id === id);
+    const cAntiga = mais_antiga.commodities.find(x => x.id === id);
+    const valorAnt = cAnt ? cAnt.valor_num : valorAtual;
+    const valorAntigo = cAntiga ? cAntiga.valor_num : valorAtual;
+    const pctSem = pct(valorAtual, valorAnt);
+    const pct4s = pct(valorAtual, valorAntigo);
+    const sparkVals = janela.map(s => {
+      const found = s.commodities.find(x => x.id === id);
+      return found ? found.valor_num : valorAtual;
+    });
+    const datainicio = janela[0].data;
+    const datafim = janela[janela.length-1].data;
+    return { id, valorAtual, valorAnt, pctSem, pct4s, sparkVals, datainicio, datafim };
+  });
+
+  // Ticker
+  const tickerContent = [...commodities, ...commodities].map(c => `
+    <span class="ticker-item">
+      <span>${ICONS[c.id] || '📦'}</span>
+      <span class="ticker-name">${NAMES[c.id] || c.id}</span>
+      <span class="ticker-price">${fmt(c.valorAtual)}</span>
+      <span class="ticker-var ${badgeClass(c.pctSem)}">${badgeArrow(c.pctSem)}${Math.abs(c.pctSem).toFixed(2)}%</span>
+    </span>
+  `).join('');
+  document.getElementById('ticker-track').innerHTML = tickerContent;
+
+  // Summary chips
+  const sorted = [...commodities].sort((a, b) => b.pctSem - a.pctSem);
+  const altas = sorted.filter(c => c.pctSem > 0).slice(0, 4);
+  const baixas = sorted.filter(c => c.pctSem < 0).reverse().slice(0, 4);
+
+  document.getElementById('altas-chips').innerHTML = altas.map(c =>
+    `<span class="summary-chip up">${ICONS[c.id]} ${NAMES[c.id]} +${c.pctSem.toFixed(2)}%</span>`
+  ).join('');
+  document.getElementById('baixas-chips').innerHTML = baixas.map(c =>
+    `<span class="summary-chip down">${ICONS[c.id]} ${NAMES[c.id]} ${c.pctSem.toFixed(2)}%</span>`
+  ).join('');
+
+  // Cards
+  const grid = document.getElementById('cards-grid');
+  grid.innerHTML = commodities.map(c => {
+    const color = COLORS[c.id] || '#4a9e6b';
+    const spark = sparkSVG(c.sparkVals, color);
+    const bcSem = badgeClass(c.pctSem);
+    const bc4s = badgeClass(c.pct4s);
+    return `
+      <a class="card" href="${CEPEA[c.id] || '#'}" target="_blank">
+        <div class="card-top">
+          <span class="card-icon">${ICONS[c.id] || '📦'}</span>
+          <div class="card-spark">${spark}</div>
+        </div>
+        <div style="font-size:9px;color:var(--text-light);text-align:right;margin-top:-4px;margin-bottom:6px;font-family:'DM Mono',monospace;">
+          ${c.datainicio} → ${c.datafim}
+        </div>
+        <div class="card-name">${NAMES[c.id] || c.id}</div>
+        <div class="card-price">${fmt(c.valorAtual)}</div>
+        <div class="card-unit">${UNITS[c.id] || ''}</div>
+        <div class="card-divider"></div>
+        <div class="card-stats">
+          <div class="card-stat">
+            <span class="stat-label">Semana ant.</span>
+            <span class="stat-value">${fmt(c.valorAnt)}</span>
+          </div>
+          <div class="card-stat">
+            <span class="stat-label">Var. semana</span>
+            <span class="badge ${bcSem}">${badgeArrow(c.pctSem)} ${Math.abs(c.pctSem).toFixed(2)}%</span>
+          </div>
+          <div class="card-stat">
+            <span class="stat-label">Var. 4 sem.</span>
+            <span class="badge ${bc4s}">${badgeArrow(c.pct4s)} ${Math.abs(c.pct4s).toFixed(2)}%</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span>CEPEA/ESALQ · ${c.datafim}</span>
+          <span style="color:var(--green-accent);">↗</span>
+        </div>
+      </a>
+    `;
+  }).join('');
+
+  // Table
+  const tbody = document.getElementById('table-body');
+  tbody.innerHTML = commodities.map(c => {
+    const color = COLORS[c.id] || '#4a9e6b';
+    const spark = sparkSVGSmall(c.sparkVals, color);
+    const bcSem = badgeClass(c.pctSem);
+    const bc4s = badgeClass(c.pct4s);
+    return `
+      <tr>
+        <td>
+          <div class="td-commodity">
+            <span class="td-icon">${ICONS[c.id] || '📦'}</span>
+            <div>
+              <div class="td-name">${NAMES[c.id] || c.id}</div>
+              <div class="td-unit">${UNITS[c.id] || ''}</div>
+            </div>
+          </div>
+        </td>
+        <td class="td-spark">${spark}</td>
+        <td class="td-price">${fmt(c.valorAnt)}</td>
+        <td class="td-price" style="font-weight:700;">${fmt(c.valorAtual)}</td>
+        <td><span class="badge ${bcSem}">${badgeArrow(c.pctSem)} ${Math.abs(c.pctSem).toFixed(2)}%</span></td>
+        <td><span class="badge ${bc4s}">${badgeArrow(c.pct4s)} ${Math.abs(c.pct4s).toFixed(2)}%</span></td>
+      </tr>
+    `;
+  }).join('');
+}
+
+(async () => {
+  const data = await loadData();
+  if (data) buildDashboard(data);
+})();
+</script>
 </body>
 </html>
