@@ -263,5 +263,21 @@
         }
       ]
     }
+  ,
+{
+  "data": "06/03/2026",
+  "commodities": [
+    {"id":"soja","valor_num": 131.18},
+    {"id":"milho","valor_num": 70.56},
+    {"id":"boi-gordo","valor_num": 346.05},
+    {"id":"cafe","valor_num": 1913.12},
+    {"id":"acucar","valor_num": 97.38},
+    {"id":"frango","valor_num": 7.06},
+    {"id":"suino","valor_num": 6.95},
+    {"id":"trigo","valor_num": 72.47},
+    {"id":"arroz","valor_num": 56.49},
+    {"id":"feijao","valor_num": 345.16},
+    {"id":"leite","valor_num": 2.02}
   ]
+}]
 }
