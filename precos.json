@@ -4,344 +4,162 @@
     {
       "data": "14/02/2025",
       "commodities": [
-        {
-          "id": "soja",
-          "valor_num": 112.8
-        },
-        {
-          "id": "milho",
-          "valor_num": 64.1
-        },
-        {
-          "id": "boi",
-          "valor_num": 308.2
-        },
-        {
-          "id": "cafe",
-          "valor_num": 2198.0
-        },
-        {
-          "id": "acucar",
-          "valor_num": 148.5
-        },
-        {
-          "id": "frango",
-          "valor_num": 6.55
-        },
-        {
-          "id": "suino",
-          "valor_num": 7.98
-        },
-        {
-          "id": "trigo",
-          "valor_num": 81.2
-        },
-        {
-          "id": "arroz",
-          "valor_num": 44.6
-        },
-        {
-          "id": "feijao",
-          "valor_num": 188.3
-        },
-        {
-          "id": "leite",
-          "valor_num": 2.18
-        }
+        {"id": "soja", "valor_num": 112.8},
+        {"id": "milho", "valor_num": 64.1},
+        {"id": "boi", "valor_num": 308.2},
+        {"id": "cafe", "valor_num": 2198.0},
+        {"id": "acucar", "valor_num": 148.5},
+        {"id": "frango", "valor_num": 6.55},
+        {"id": "suino", "valor_num": 7.98},
+        {"id": "trigo", "valor_num": 81.2},
+        {"id": "arroz", "valor_num": 44.6},
+        {"id": "feijao", "valor_num": 188.3},
+        {"id": "leite", "valor_num": 2.18}
       ]
     },
     {
       "data": "21/02/2025",
       "commodities": [
-        {
-          "id": "soja",
-          "valor_num": 113.9
-        },
-        {
-          "id": "milho",
-          "valor_num": 63.4
-        },
-        {
-          "id": "boi",
-          "valor_num": 311.8
-        },
-        {
-          "id": "cafe",
-          "valor_num": 2256.0
-        },
-        {
-          "id": "acucar",
-          "valor_num": 146.8
-        },
-        {
-          "id": "frango",
-          "valor_num": 6.48
-        },
-        {
-          "id": "suino",
-          "valor_num": 8.05
-        },
-        {
-          "id": "trigo",
-          "valor_num": 80.3
-        },
-        {
-          "id": "arroz",
-          "valor_num": 43.85
-        },
-        {
-          "id": "feijao",
-          "valor_num": 192.1
-        },
-        {
-          "id": "leite",
-          "valor_num": 2.21
-        }
+        {"id": "soja", "valor_num": 113.9},
+        {"id": "milho", "valor_num": 63.4},
+        {"id": "boi", "valor_num": 311.8},
+        {"id": "cafe", "valor_num": 2256.0},
+        {"id": "acucar", "valor_num": 146.8},
+        {"id": "frango", "valor_num": 6.48},
+        {"id": "suino", "valor_num": 8.05},
+        {"id": "trigo", "valor_num": 80.3},
+        {"id": "arroz", "valor_num": 43.85},
+        {"id": "feijao", "valor_num": 192.1},
+        {"id": "leite", "valor_num": 2.21}
       ]
     },
     {
       "data": "28/02/2025",
       "commodities": [
-        {
-          "id": "soja",
-          "valor_num": 115.4
-        },
-        {
-          "id": "milho",
-          "valor_num": 62.66
-        },
-        {
-          "id": "boi",
-          "valor_num": 314.6
-        },
-        {
-          "id": "cafe",
-          "valor_num": 2324.0
-        },
-        {
-          "id": "acucar",
-          "valor_num": 144.2
-        },
-        {
-          "id": "frango",
-          "valor_num": 6.42
-        },
-        {
-          "id": "suino",
-          "valor_num": 8.12
-        },
-        {
-          "id": "trigo",
-          "valor_num": 79.4
-        },
-        {
-          "id": "arroz",
-          "valor_num": 43.02
-        },
-        {
-          "id": "feijao",
-          "valor_num": 196.65
-        },
-        {
-          "id": "leite",
-          "valor_num": 2.19
-        }
+        {"id": "soja", "valor_num": 115.4},
+        {"id": "milho", "valor_num": 62.66},
+        {"id": "boi", "valor_num": 314.6},
+        {"id": "cafe", "valor_num": 2324.0},
+        {"id": "acucar", "valor_num": 144.2},
+        {"id": "frango", "valor_num": 6.42},
+        {"id": "suino", "valor_num": 8.12},
+        {"id": "trigo", "valor_num": 79.4},
+        {"id": "arroz", "valor_num": 43.02},
+        {"id": "feijao", "valor_num": 196.65},
+        {"id": "leite", "valor_num": 2.19}
       ]
     },
     {
       "data": "07/03/2025",
       "commodities": [
-        {
-          "id": "soja",
-          "icon": "🫘",
-          "nome": "Soja",
-          "valor_num": 116.3,
-          "preco": "R$ 116,30",
-          "unidade": "saca 60kg · PR",
-          "cor": "#16a34a",
-          "cepea": "https://cepea.org.br/br/indicador/soja.aspx"
-        },
-        {
-          "id": "milho",
-          "icon": "🌽",
-          "nome": "Milho",
-          "valor_num": 62.45,
-          "preco": "R$ 62,45",
-          "unidade": "saca 60kg · SP",
-          "cor": "#ca8a04",
-          "cepea": "https://cepea.org.br/br/indicador/milho.aspx"
-        },
-        {
-          "id": "boi",
-          "icon": "🐄",
-          "nome": "Boi Gordo",
-          "valor_num": 318.5,
-          "preco": "R$ 318,50",
-          "unidade": "arroba · SP",
-          "cor": "#dc2626",
-          "cepea": "https://cepea.org.br/br/indicador/boi-gordo.aspx"
-        },
-        {
-          "id": "cafe",
-          "icon": "☕",
-          "nome": "Café Arábica",
-          "valor_num": 2380.0,
-          "preco": "R$2.380,00",
-          "unidade": "saca 60kg · SP",
-          "cor": "#92400e",
-          "cepea": "https://cepea.org.br/br/indicador/cafe.aspx"
-        },
-        {
-          "id": "acucar",
-          "icon": "🍬",
-          "nome": "Açúcar Cristal",
-          "valor_num": 144.2,
-          "preco": "R$ 144,20",
-          "unidade": "saca 50kg · SP",
-          "cor": "#7c3aed",
-          "cepea": "https://cepea.org.br/br/indicador/acucar.aspx"
-        },
-        {
-          "id": "frango",
-          "icon": "🐔",
-          "nome": "Frango Vivo",
-          "valor_num": 6.38,
-          "preco": "R$ 6,38",
-          "unidade": "kg · SP",
-          "cor": "#f97316",
-          "cepea": "https://cepea.org.br/br/indicador/frango.aspx"
-        },
-        {
-          "id": "suino",
-          "icon": "🐷",
-          "nome": "Suíno Vivo",
-          "valor_num": 8.15,
-          "preco": "R$ 8,15",
-          "unidade": "kg · SP",
-          "cor": "#ec4899",
-          "cepea": "https://cepea.org.br/br/indicador/suino.aspx"
-        },
-        {
-          "id": "trigo",
-          "icon": "🌾",
-          "nome": "Trigo",
-          "valor_num": 78.5,
-          "preco": "R$ 78,50",
-          "unidade": "saca 60kg · PR",
-          "cor": "#d97706",
-          "cepea": "https://cepea.org.br/br/indicador/trigo.aspx"
-        },
-        {
-          "id": "arroz",
-          "icon": "🍚",
-          "nome": "Arroz em Casca",
-          "valor_num": 42.8,
-          "preco": "R$ 42,80",
-          "unidade": "saca 50kg · RS",
-          "cor": "#0891b2",
-          "cepea": "https://cepea.org.br/br/indicador/arroz.aspx"
-        },
-        {
-          "id": "feijao",
-          "icon": "🫘",
-          "nome": "Feijão Carioca",
-          "valor_num": 198.4,
-          "preco": "R$ 198,40",
-          "unidade": "saca 60kg · PR",
-          "cor": "#854d0e",
-          "cepea": "https://cepea.org.br/br/indicador/feijao.aspx"
-        },
-        {
-          "id": "leite",
-          "valor_num": 2.23,
-          "icon": "🥛",
-          "nome": "Leite",
-          "preco": "R$ 2,23",
-          "unidade": "por litro · SP",
-          "cor": "#0284c7",
-          "cepea": "https://cepea.org.br/br/indicador/leite.aspx"
-        }
+        {"id": "soja", "icon": "🫘", "nome": "Soja", "valor_num": 116.3, "preco": "R$ 116,30", "unidade": "saca 60kg · PR", "cor": "#16a34a", "cepea": "https://cepea.org.br/br/indicador/soja.aspx"},
+        {"id": "milho", "icon": "🌽", "nome": "Milho", "valor_num": 62.45, "preco": "R$ 62,45", "unidade": "saca 60kg · SP", "cor": "#ca8a04", "cepea": "https://cepea.org.br/br/indicador/milho.aspx"},
+        {"id": "boi", "icon": "🐄", "nome": "Boi Gordo", "valor_num": 318.5, "preco": "R$ 318,50", "unidade": "arroba · SP", "cor": "#dc2626", "cepea": "https://cepea.org.br/br/indicador/boi-gordo.aspx"},
+        {"id": "cafe", "icon": "☕", "nome": "Café Arábica", "valor_num": 2380.0, "preco": "R$2.380,00", "unidade": "saca 60kg · SP", "cor": "#92400e", "cepea": "https://cepea.org.br/br/indicador/cafe.aspx"},
+        {"id": "acucar", "icon": "🍬", "nome": "Açúcar Cristal", "valor_num": 144.2, "preco": "R$ 144,20", "unidade": "saca 50kg · SP", "cor": "#7c3aed", "cepea": "https://cepea.org.br/br/indicador/acucar.aspx"},
+        {"id": "frango", "icon": "🐔", "nome": "Frango Vivo", "valor_num": 6.38, "preco": "R$ 6,38", "unidade": "kg · SP", "cor": "#f97316", "cepea": "https://cepea.org.br/br/indicador/frango.aspx"},
+        {"id": "suino", "icon": "🐷", "nome": "Suíno Vivo", "valor_num": 8.15, "preco": "R$ 8,15", "unidade": "kg · SP", "cor": "#ec4899", "cepea": "https://cepea.org.br/br/indicador/suino.aspx"},
+        {"id": "trigo", "icon": "🌾", "nome": "Trigo", "valor_num": 78.5, "preco": "R$ 78,50", "unidade": "saca 60kg · PR", "cor": "#d97706", "cepea": "https://cepea.org.br/br/indicador/trigo.aspx"},
+        {"id": "arroz", "icon": "🍚", "nome": "Arroz em Casca", "valor_num": 42.8, "preco": "R$ 42,80", "unidade": "saca 50kg · RS", "cor": "#0891b2", "cepea": "https://cepea.org.br/br/indicador/arroz.aspx"},
+        {"id": "feijao", "icon": "🫘", "nome": "Feijão Carioca", "valor_num": 198.4, "preco": "R$ 198,40", "unidade": "saca 60kg · PR", "cor": "#854d0e", "cepea": "https://cepea.org.br/br/indicador/feijao.aspx"},
+        {"id": "leite", "valor_num": 2.23, "icon": "🥛", "nome": "Leite", "preco": "R$ 2,23", "unidade": "por litro · SP", "cor": "#0284c7", "cepea": "https://cepea.org.br/br/indicador/leite.aspx"}
+      ]
+    },
+    {
+      "data": "06/03/2026",
+      "commodities": [
+        {"id": "soja", "valor_num": 131.18},
+        {"id": "milho", "valor_num": 70.56},
+        {"id": "boi-gordo", "valor_num": 346.05},
+        {"id": "cafe", "valor_num": 1913.12},
+        {"id": "acucar", "valor_num": 97.38},
+        {"id": "frango", "valor_num": 7.06},
+        {"id": "suino", "valor_num": 6.95},
+        {"id": "trigo", "valor_num": 72.47},
+        {"id": "arroz", "valor_num": 56.49},
+        {"id": "feijao", "valor_num": 345.16},
+        {"id": "leite", "valor_num": 2.02}
+      ]
+    },
+    {
+      "data": "09/03/2026",
+      "commodities": [
+        {"id": "soja", "valor_num": 130.02},
+        {"id": "milho", "valor_num": 70.63},
+        {"id": "boi-gordo", "valor_num": 347.40},
+        {"id": "cafe", "valor_num": 1929.37},
+        {"id": "acucar", "valor_num": 98.31},
+        {"id": "frango", "valor_num": 7.05},
+        {"id": "suino", "valor_num": 6.94},
+        {"id": "trigo", "valor_num": 72.54},
+        {"id": "arroz", "valor_num": 56.75},
+        {"id": "feijao", "valor_num": 344.39},
+        {"id": "leite", "valor_num": 2.02}
+      ]
+    },
+    {
+      "data": "10/03/2026",
+      "commodities": [
+        {"id": "soja", "valor_num": 128.80},
+        {"id": "milho", "valor_num": 71.09},
+        {"id": "boi-gordo", "valor_num": 346.80},
+        {"id": "cafe", "valor_num": 1918.60},
+        {"id": "acucar", "valor_num": 98.52},
+        {"id": "frango", "valor_num": 7.05},
+        {"id": "suino", "valor_num": 6.94},
+        {"id": "trigo", "valor_num": 72.68},
+        {"id": "arroz", "valor_num": 57.22},
+        {"id": "feijao", "valor_num": 341.03},
+        {"id": "leite", "valor_num": 2.02}
+      ]
+    },
+    {
+      "data": "11/03/2026",
+      "commodities": [
+        {"id": "soja", "valor_num": 129.29},
+        {"id": "milho", "valor_num": 71.32},
+        {"id": "boi-gordo", "valor_num": 347.25},
+        {"id": "cafe", "valor_num": 1872.75},
+        {"id": "acucar", "valor_num": 97.28},
+        {"id": "frango", "valor_num": 7.05},
+        {"id": "suino", "valor_num": 6.96},
+        {"id": "trigo", "valor_num": 72.60},
+        {"id": "arroz", "valor_num": 57.45},
+        {"id": "feijao", "valor_num": 337.73},
+        {"id": "leite", "valor_num": 2.02}
+      ]
+    },
+    {
+      "data": "12/03/2026",
+      "commodities": [
+        {"id": "soja", "valor_num": 130.87},
+        {"id": "milho", "valor_num": 71.56},
+        {"id": "boi-gordo", "valor_num": 347.50},
+        {"id": "cafe", "valor_num": 1901.07},
+        {"id": "acucar", "valor_num": 95.79},
+        {"id": "frango", "valor_num": 7.05},
+        {"id": "suino", "valor_num": 6.96},
+        {"id": "trigo", "valor_num": 73.03},
+        {"id": "arroz", "valor_num": 57.97},
+        {"id": "feijao", "valor_num": 337.25},
+        {"id": "leite", "valor_num": 2.02}
+      ]
+    },
+    {
+      "data": "13/03/2026",
+      "commodities": [
+        {"id": "soja", "valor_num": 130.20},
+        {"id": "milho", "valor_num": 71.98},
+        {"id": "boi-gordo", "valor_num": 346.60},
+        {"id": "cafe", "valor_num": 1878.47},
+        {"id": "acucar", "valor_num": 97.24},
+        {"id": "frango", "valor_num": 7.03},
+        {"id": "suino", "valor_num": 6.77},
+        {"id": "trigo", "valor_num": 73.20},
+        {"id": "arroz", "valor_num": 58.45},
+        {"id": "feijao", "valor_num": 336.07},
+        {"id": "leite", "valor_num": 2.02}
       ]
     }
-  ,
-{
-  "data": "06/03/2026",
-  "commodities": [
-    {"id":"soja","valor_num": 131.18},
-    {"id":"milho","valor_num": 70.56},
-    {"id":"boi-gordo","valor_num": 346.05},
-    {"id":"cafe","valor_num": 1913.12},
-    {"id":"acucar","valor_num": 97.38},
-    {"id":"frango","valor_num": 7.06},
-    {"id":"suino","valor_num": 6.95},
-    {"id":"trigo","valor_num": 72.47},
-    {"id":"arroz","valor_num": 56.49},
-    {"id":"feijao","valor_num": 345.16},
-    {"id":"leite","valor_num": 2.02}
   ]
-},
-{
-  "data": "09/03/2026",
-  "commodities": [
-    {"id":"soja","valor_num": 130.02},
-    {"id":"milho","valor_num": 70.63},
-    {"id":"boi-gordo","valor_num": 347.40},
-    {"id":"cafe","valor_num": 1929.37},
-    {"id":"acucar","valor_num": 98.31},
-    {"id":"frango","valor_num": 7.05},
-    {"id":"suino","valor_num": 6.94},
-    {"id":"trigo","valor_num": 72.54},
-    {"id":"arroz","valor_num": 56.75},
-    {"id":"feijao","valor_num": 344.39},
-    {"id":"leite","valor_num": 2.02}
-  ]
-},
-{
-  "data": "10/03/2026",
-  "commodities": [
-    {"id":"soja",      "valor_num": 128.80},
-    {"id":"milho",     "valor_num": 71.09},
-    {"id":"boi-gordo", "valor_num": 346.80},
-    {"id":"cafe",      "valor_num": 1918.60},
-    {"id":"acucar",    "valor_num": 98.52},
-    {"id":"frango",    "valor_num": 7.05},
-    {"id":"suino",     "valor_num": 6.94},
-    {"id":"trigo",     "valor_num": 72.68},
-    {"id":"arroz",     "valor_num": 57.22},
-    {"id":"feijao",    "valor_num": 341.03},
-    {"id":"leite",     "valor_num": 2.02}
-  ]
-},
-{
-  "data": "11/03/2026",
-  "commodities": [
-    {"id":"soja",      "valor_num": 129.29},
-    {"id":"milho",     "valor_num": 71.32},
-    {"id":"boi-gordo", "valor_num": 347.25},
-    {"id":"cafe",      "valor_num": 1872.75},
-    {"id":"acucar",    "valor_num": 97.28},
-    {"id":"frango",    "valor_num": 7.05},
-    {"id":"suino",     "valor_num": 6.96},
-    {"id":"trigo",     "valor_num": 72.60},
-    {"id":"arroz",     "valor_num": 57.45},
-    {"id":"feijao",    "valor_num": 337.73},
-    {"id":"leite",     "valor_num": 2.02}
-  ]
-},
-{
-  "data": "12/03/2026",
-  "commodities": [
-    {"id":"soja",      "valor_num": 130.87},
-    {"id":"milho",     "valor_num": 71.56},
-    {"id":"boi-gordo", "valor_num": 347.50},
-    {"id":"cafe",      "valor_num": 1901.07},
-    {"id":"acucar",    "valor_num": 95.79},
-    {"id":"frango",    "valor_num": 7.05},
-    {"id":"suino",     "valor_num": 6.96},
-    {"id":"trigo",     "valor_num": 73.03},
-    {"id":"arroz",     "valor_num": 57.97},
-    {"id":"feijao",    "valor_num": 337.25},
-    {"id":"leite",     "valor_num": 2.02}
-  ]
-}]
 }
