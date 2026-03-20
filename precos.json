@@ -209,5 +209,20 @@
         {"id": "leite", "valor_num": 2.02}
       ]
     }
-  ]
+  {
+      "data": "19/03/2026",
+      "commodities": [
+        {"id": "soja", "valor_num": 129.38},
+        {"id": "milho", "valor_num": 71.63},
+        {"id": "boi-gordo", "valor_num": 349.60},
+        {"id": "cafe", "valor_num": 1924.51},
+        {"id": "acucar", "valor_num": 100.51},
+        {"id": "frango", "valor_num": 6.81},
+        {"id": "suino", "valor_num": 6.76},
+        {"id": "trigo", "valor_num": 75.07},
+        {"id": "arroz", "valor_num": 59.54},
+        {"id": "feijao", "valor_num": 332.64},
+        {"id": "leite", "valor_num": 2.02}
+      ]
+    }]
 }
