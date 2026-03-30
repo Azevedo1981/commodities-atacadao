@@ -208,8 +208,8 @@
         {"id": "feijao", "valor_num": 332.74},
         {"id": "leite", "valor_num": 2.02}
       ]
-    }
-  {
+    },
+    {
       "data": "19/03/2026",
       "commodities": [
         {"id": "soja", "valor_num": 129.38},
@@ -224,7 +224,8 @@
         {"id": "feijao", "valor_num": 332.64},
         {"id": "leite", "valor_num": 2.02}
       ]
-    }{
+    },
+    {
       "data": "23/03/2026",
       "commodities": [
         {"id": "soja", "valor_num": 129.87},
@@ -239,7 +240,8 @@
         {"id": "feijao", "valor_num": 331.46},
         {"id": "leite", "valor_num": 2.02}
       ]
-    }{
+    },
+    {
       "data": "24/03/2026",
       "commodities": [
         {"id": "soja", "valor_num": 130.15},
@@ -254,7 +256,8 @@
         {"id": "feijao", "valor_num": 331.14},
         {"id": "leite", "valor_num": 2.02}
       ]
-    }{
+    },
+    {
       "data": "25/03/2026",
       "commodities": [
         {"id": "soja", "valor_num": 129.25},
@@ -269,7 +272,8 @@
         {"id": "feijao", "valor_num": 332.25},
         {"id": "leite", "valor_num": 2.02}
       ]
-    }{
+    },
+    {
       "data": "27/03/2026",
       "commodities": [
         {"id": "soja", "valor_num": 130.01},
@@ -284,5 +288,6 @@
         {"id": "feijao", "valor_num": 332.20},
         {"id": "leite", "valor_num": 2.02}
       ]
-    }]
+    }
+  ]
 }
