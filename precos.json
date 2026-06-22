@@ -515,7 +515,7 @@
    },
    {
   "data": "19/06/2026",
-  "precos": [
+  "commodities": [
     { "id": "soja", "valor_num": 132.84 },
     { "id": "milho", "valor_num": 62.97 },
     { "id": "boi-gordo", "valor_num": 345.50 },
