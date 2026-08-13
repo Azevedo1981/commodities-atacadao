@@ -521,16 +521,16 @@ function buildDashboard(data) {
 
   // Build commodity data
   const commodities = atual.commodities.map(c => {
-    const id = c.id.trim();
+    const id = c.id;
     const valorAtual = c.valor_num;
-    const cAnt = anterior.commodities.find(x => x.id.trim() === id);
-    const cAntiga = mais_antiga.commodities.find(x => x.id.trim() === id);
+    const cAnt = anterior.commodities.find(x => x.id === id);
+    const cAntiga = mais_antiga.commodities.find(x => x.id === id);
     const valorAnt = cAnt ? cAnt.valor_num : valorAtual;
     const valorAntigo = cAntiga ? cAntiga.valor_num : valorAtual;
     const pctSem = pct(valorAtual, valorAnt);
     const pct4s = pct(valorAtual, valorAntigo);
     const sparkVals = janela.map(s => {
-      const found = s.commodities.find(x => x.id.trim() === id);
+      const found = s.commodities.find(x => x.id === id);
       return found ? found.valor_num : valorAtual;
     });
     const datainicio = janela[0].data;
