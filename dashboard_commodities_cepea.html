@@ -403,11 +403,12 @@
           <th>Semana ant.</th>
           <th>Atual</th>
           <th>Var. Semana</th>
+          <th>Var. Mês</th>
           <th>Var. 4 Sem.</th>
         </tr>
       </thead>
       <tbody id="table-body">
-        <tr><td colspan="6" class="loading">Carregando...</td></tr>
+        <tr><td colspan="7" class="loading">Carregando...</td></tr>
       </tbody>
     </table>
   </div>
@@ -473,6 +474,11 @@ function badgeArrow(p) {
   return '—';
 }
 
+function varMesBadge(v) {
+  if (v === null || v === undefined) return '<span class="stat-value">—</span>';
+  return `<span class="badge ${badgeClass(v)}">${badgeArrow(v)} ${Math.abs(v).toFixed(2)}%</span>`;
+}
+
 function sparkSVG(values, color, w=80, h=32) {
   if (values.length < 2) return '';
   const min = Math.min(...values);
@@ -529,13 +535,16 @@ function buildDashboard(data) {
     const valorAntigo = cAntiga ? cAntiga.valor_num : valorAtual;
     const pctSem = pct(valorAtual, valorAnt);
     const pct4s = pct(valorAtual, valorAntigo);
+    // Var. Mês: valor oficial informado pelo próprio CEPEA (coluna "VAR./MÊS" do site),
+    // não é calculado localmente — vem direto do precos.json quando disponível.
+    const varMes = (typeof c.var_mes === 'number') ? c.var_mes : null;
     const sparkVals = janela.map(s => {
       const found = s.commodities.find(x => x.id.trim() === id);
       return found ? found.valor_num : valorAtual;
     });
     const datainicio = janela[0].data;
     const datafim = janela[janela.length-1].data;
-    return { id, valorAtual, valorAnt, pctSem, pct4s, sparkVals, datainicio, datafim };
+    return { id, valorAtual, valorAnt, pctSem, pct4s, varMes, sparkVals, datainicio, datafim };
   });
 
   // Ticker
@@ -591,6 +600,10 @@ function buildDashboard(data) {
             <span class="badge ${bcSem}">${badgeArrow(c.pctSem)} ${Math.abs(c.pctSem).toFixed(2)}%</span>
           </div>
           <div class="card-stat">
+            <span class="stat-label">Var. mês (CEPEA)</span>
+            ${varMesBadge(c.varMes)}
+          </div>
+          <div class="card-stat">
             <span class="stat-label">Var. 4 sem.</span>
             <span class="badge ${bc4s}">${badgeArrow(c.pct4s)} ${Math.abs(c.pct4s).toFixed(2)}%</span>
           </div>
@@ -625,6 +638,7 @@ function buildDashboard(data) {
         <td class="td-price">${fmt(c.valorAnt)}</td>
         <td class="td-price" style="font-weight:700;">${fmt(c.valorAtual)}</td>
         <td><span class="badge ${bcSem}">${badgeArrow(c.pctSem)} ${Math.abs(c.pctSem).toFixed(2)}%</span></td>
+        <td>${varMesBadge(c.varMes)}</td>
         <td><span class="badge ${bc4s}">${badgeArrow(c.pct4s)} ${Math.abs(c.pct4s).toFixed(2)}%</span></td>
       </tr>
     `;
