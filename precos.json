@@ -3676,6 +3676,22 @@
     { "id": "feijao    ", "valor_num": 319.6 },
     { "id": "leite     ", "valor_num": 2.8869 }
    ]
+  },
+  {
+  "data": "26/10/2026",
+  "commodities": [
+    { "id": "soja      ", "valor_num": 155.55, "var_mes": 3.72 },
+    { "id": "milho     ", "valor_num": 64.24, "var_mes": 6.45 },
+    { "id": "boi-gordo ", "valor_num": 381.4, "var_mes": 4.69 },
+    { "id": "cafe      ", "valor_num": 1601.95, "var_mes": 1.59 },
+    { "id": "acucar    ", "valor_num": 127.05, "var_mes": 4.9 },
+    { "id": "frango    ", "valor_num": 8.27, "var_mes": -0.36 },
+    { "id": "suino     ", "valor_num": 6.47, "var_mes": 14.13 },
+    { "id": "trigo     ", "valor_num": 93.81, "var_mes": 289.93 },
+    { "id": "arroz     ", "valor_num": 82.04, "var_mes": -0.93 },
+    { "id": "feijao    ", "valor_num": 320.22 },
+    { "id": "leite     ", "valor_num": 2.8869 }
+   ]
   }
  ]
 }
